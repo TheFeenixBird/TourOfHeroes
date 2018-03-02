@@ -1,0 +1,40 @@
+<h2>{{ hero.name | uppercase}} Détails</h2>
+<div>
+  <span>ID : </span>{{hero.id}}</div>
+<div>
+  <span>Name : </span>{{hero.name}}</div>
+
+<div>
+  <label>Name:
+    <!-- [(ngModel)] Permet de faire une bindValue // permet de faire les liaisons entre propriété et html textbox -->
+    <input [(ngModel)]="hero.name" (click)="OnSelect(hero)" placeholder="Name">
+  </label>
+</div>
+
+<div class="heroes-list">
+  <h2>My Heroes</h2>
+  <ul class="heroes">
+    <!-- Active la sélection des heros sur click // *ngFor est une directive de répétition -->
+    <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </li>
+  </ul>
+  <div>
+
+    <!-- Affichage de l'héro sélectionné -->
+
+    <!-- Activé par heroes-detail html // child -->
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+    <!-- Activé par heroes html // condition : ngIf montre le detail que si l'héro existe-->
+    <!-- 
+<div *ngIf="selectedHero">
+  <h2>{{ selectedHero.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{selectedHero.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectedHero.name" placeholder="name">
+    </label>
+  </div>
+</div>
+-->

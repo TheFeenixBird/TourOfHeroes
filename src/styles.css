@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Quicksand|Raleway|Playfair+Display');
+
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
+
+h1 {
+    color: lightcoral;
+    font-size: 350%;
+    font-weight: lighter;
+    
+}
+
+h2, h3 {
+    color: #444;
+    font-weight: lighter;
+}
+
+body{
+    margin: 2em;
+}
+
+li{
+    list-style: none;
+    
+}
+li a{
+    color: grey;
+    text-decoration: none;
+}
+
+body, input[text], button {
+  color: #888;
+}
+
